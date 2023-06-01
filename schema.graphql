@@ -1,0 +1,34 @@
+type Query {
+  cammisusers: [CammisUser]
+  cammisuser(id: ID): CammisUser
+}
+
+type Mutation {
+  addUser (input: AddUserInput): CammisUser
+  deleteUser (id: ID!): CammisUser
+  updateUser (input: UpdateUserInput) : CammisUser
+}
+
+type CammisUser {
+  id: ID!
+  firstName: String
+  lastName: String
+  cammisStatus: String
+  systemStatus: String
+  createdAt: String
+}
+
+input AddUserInput {
+  firstName: String 
+  lastName: String 
+  cammisStatus: String
+  systemStatus: String
+}
+
+input UpdateUserInput {
+  id: ID!
+  firstName: String 
+  lastName: String 
+  cammisStatus: String
+  systemStatus: String
+}
